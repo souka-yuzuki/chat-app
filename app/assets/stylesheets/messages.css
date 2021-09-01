@@ -21,20 +21,20 @@
   align-items: center;
 }
 
-.user-name{
+.user-name a{
   font-size: 16px;
   color: #FAFAFA;
+  text-decoration: none;
 }
 
-.chat-create-btn{
+.chat-create-btn a{
   border: 1px solid lightblue;
   padding: 14px;
-}
-
-.chat-create{
   font-size: 10px;
   color: deepskyblue;
+  text-decoration: none;
 }
+
 
 .side-body{
   background-color: #2F3E51;
