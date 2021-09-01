@@ -1,7 +1,9 @@
 <div class = "side-header" >
-  <p class = "user-name">ユーザー名</p>
+  <div class = "user-name">
+  <%= link_to current_user.name, edit_user_path(current_user)%>
+  </div>
   <div class = "chat-create-btn">
-    <P class = "chat-create">チャットを作成する</P>
+    <a href="#">チャットを作成する</a>
   </div>
 </div>
 <div class = "side-body" >
