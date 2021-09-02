@@ -5,20 +5,8 @@
   </div>
 </div>
 <div class = "main-body" >
-  <div class = "message-box">
-    <div class = "user-date">
-      <div class = "user">
-        <p>ユーザー名</P>
-      </div>
-      <div class = "date">
-        <p>日にち時刻</P>
-      </div>
-    </div>
-    <div class = "message">
-      <P>メッセージ</P>
-    </div>
-  </div>
-<div class =  >
+  <%= render partial: 'message', collection: @messages %>
+</div>
 <%= form_with model: [@room, @message], class: 'main-footer', local: true do |f| %>
   <div class = "form-box">
     <%= f.text_field :content, class: 'text' placeholder="type a message" %>
