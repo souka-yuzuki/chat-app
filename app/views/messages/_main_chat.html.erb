@@ -1,30 +1,23 @@
 <div class = "main-header" >
-  <P class = "chat-title">magicroom</P>
+  <div class = "chat-title">
+    <%= @room.name %>
+  </div>
   <div class = "chat-end-btn">
-    <a href="#">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
   </div>
 </div>
+
 <div class = "main-body" >
-  <div class = "message-box">
-    <div class = "user-date">
-      <div class = "user">
-        <p>ユーザー名</P>
-      </div>
-      <div class = "date">
-        <p>日にち時刻</P>
-      </div>
-    </div>
-    <div class = "message">
-      <P>メッセージ</P>
-    </div>
-  </div>
-<div class = "main-footer" >
+  <%= render partial: 'message', collection: @messages %>
+</div>
+
+<%= form_with model: [@room, @message], class: 'main-footer', local: true do |f| %>
   <div class = "form-box">
-    <input type="text" placeholder="type a message" class = "text">
+    <%= f.text_field :content, class: 'text', placeholder: 'type a message' %>
     <label class="image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
-  <input type="submit" value="送信" class = "submit-btn"> 
-</div>
+  <%= f.submit '送信', class: 'submit-btn' %> 
+<% end %>
